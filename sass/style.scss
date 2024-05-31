@@ -29,6 +29,7 @@
     text-wrap: nowrap;
 }
 
+// Le div contenant les pays
 .contenu__pays {
     margin-top: 5rem;
     display: flex;
@@ -36,4 +37,19 @@
     align-items: center;
     flex-direction: column;
     float: right;
+}
+
+// La carte de chaque pays
+.pays__carte {
+    margin-bottom: 5rem;
+}
+
+// L'image des cartes ne s'affiche pas si on est sur mobile...
+.pays__carte > img {
+    display: none;
+    
+    // ...sinon elle s'affiche
+    @media screen and (min-width: 700px) {
+        display: flex;
+    }
 }

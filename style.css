@@ -36,4 +36,17 @@
   align-items: center;
   flex-direction: column;
   float: right;
+}
+
+.pays__carte {
+  margin-bottom: 5rem;
+}
+
+.pays__carte > img {
+  display: none;
+}
+@media screen and (min-width: 700px) {
+  .pays__carte > img {
+    display: flex;
+  }
 }/*# sourceMappingURL=style.css.map */

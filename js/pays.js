@@ -1,3 +1,8 @@
+// Call fetchEtAffichePays with "France" when the page loads
+document.addEventListener('DOMContentLoaded', (event) => {
+    fetchEtAffichePays("France");
+});
+
 function fetchEtAffichePays(paysChoisi) {
   let url = `http://localhost:8085/4w4-2024-gr1/wp-json/wp/v2/posts?_embed&per_page=57`; // URL du serveur local
 
@@ -32,7 +37,8 @@ fetch(url)
     filteredData.forEach(function (article) {
         let titre = article.title.rendered;
         let contenu = article.content.rendered;
-        //
+
+        // On affiche le contenu de tous les articles
         contenu = contenu.substring(0, 200) + '...';
         console.log(article.acf);
 
@@ -47,12 +53,13 @@ fetch(url)
         }
         
         // On met le tout dans la carte
-        sectionPays.innerHTML = `
+        sectionPays.innerHTML += `
+        <div class="pays__carte">
             <h2>${titre}</h2>
             <p>${contenu}</p><br>
-            <img src="${imageUrl}" alt="Image de la destination" style="width: 150px; height: 150px;">`;
-
-        // 
+            <img src="${imageUrl}" alt="Image de la destination" style="width: 150px; height: 150px;">
+        </div>
+        `;
     })
 })
 }
