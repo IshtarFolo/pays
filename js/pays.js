@@ -36,17 +36,23 @@ fetch(url)
         contenu = contenu.substring(0, 200) + '...';
         console.log(article.acf);
 
-        let carte = document.createElement("div");
-        carte.classList.add("restapi__carte");
+        let sectionPays = document.querySelector(".contenu__pays");
 
-        carte.innerHTML = `
-        <h2>${titre}</h2>
-        <p>${contenu}</p><br>
-        //  On affiche l'image de la destination et si elle ne contient pas d'image on met l'adresse https://via.placeholder.com/150 comme placeholder
+        let imageUrl = 'https://via.placeholder.com/150'; // Default image URL
 
-        <img src="${article.acf.image ? article.acf.image : (article._embedded['wp:featuredmedia'][0].source_url ? article._embedded['wp:featuredmedia'][0].source_url : 
-        'https://via.placeholder.com/150')}" alt="Image de la destination" style="width: 150px; height: 150px;">`;
-        restapi.appendChild(carte);
+        if (article.acf && article.acf.image) {
+            imageUrl = article.acf.image;
+        } else if (article._embedded && article._embedded['wp:featuredmedia'] && article._embedded['wp:featuredmedia'][0] && article._embedded['wp:featuredmedia'][0].source_url) {
+            imageUrl = article._embedded['wp:featuredmedia'][0].source_url;
+        }
+        
+        // On met le tout dans la carte
+        sectionPays.innerHTML = `
+            <h2>${titre}</h2>
+            <p>${contenu}</p><br>
+            <img src="${imageUrl}" alt="Image de la destination" style="width: 150px; height: 150px;">`;
+
+        // 
     })
 })
 }

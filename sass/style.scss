@@ -1,3 +1,4 @@
+// Le menu de la page pays
 .menu__pays {
     height: 5rem;
     display: flex;
@@ -26,4 +27,13 @@
     align-items: center;
     justify-content: center;
     text-wrap: nowrap;
+}
+
+.contenu__pays {
+    margin-top: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    float: right;
 }
