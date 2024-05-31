@@ -1,0 +1,24 @@
+.menu__pays {
+  height: 5rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 2rem;
+  flex: 1 0 200px;
+  cursor: pointer;
+}
+
+.item-menu {
+  text-decoration: none;
+  color: white;
+  padding: 5px;
+  border: 2px solid white;
+  border-radius: 5px;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-wrap: nowrap;
+}/*# sourceMappingURL=style.css.map */
