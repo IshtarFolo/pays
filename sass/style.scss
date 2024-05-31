@@ -7,6 +7,11 @@
     margin: 20px 2rem;
     flex: 1 0 200px;
     cursor: pointer;
+    flex-wrap: wrap;
+
+    @media screen and (min-width: 700px) {
+        flex-wrap: nowrap;
+    }
 }
 
 .item-menu {
